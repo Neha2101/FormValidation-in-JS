@@ -1,0 +1,263 @@
+﻿<html>
+	<head>
+		<title>Validation form using javascript</title>
+		<link href="style.css" rel="stylesheet"></link>
+		
+		<script type="text/javascript">
+		function formvalidation()
+		{			
+			var correct_way=/^[A-Za-z]+$/;
+			var fname=document.getElementById("fname").value;
+			if(fname=="")
+			{
+				document.getElementById("msg").innerHTML="** Please enter your firstname";
+				document.getElementById("msg").style.color="red";
+				document.getElementById("msg").style.fontStyle = "italic";
+				return false;
+			}
+			if(fname.length<3)
+			{
+				document.getElementById("msg").innerHTML="**Enter name must be 3 characters";
+				return false;
+			}
+			if(fname.length>12)
+			{
+				document.getElementById("msg").innerHTML="**Enter name less than 12 characters";
+				return false;
+			}
+			if(fname.match(correct_way))
+			{
+				true;
+			}
+			else
+			{
+				document.getElementById("msg").innerHTML="**Only alphabets are allowed";
+				return false;
+			}
+			
+			//lastname validation
+			var correct=/^[A-Za-z]+$/;
+			var lname=document.getElementById("lname").value;
+			document.getElementById("msg1").style.fontStyle = "italic";
+			if(lname=="")
+			{
+				document.getElementById("msg1").innerHTML="** Please enter your lastname";
+				document.getElementById("msg1").style.color="red";
+				return false;
+			}
+			if(lname.length<3)
+			{
+				document.getElementById("msg1").innerHTML="**Enter name must be 3 characters";
+				return false;
+			}
+			if(lname.length>20)
+			{
+				document.getElementById("msg1").innerHTML="**Enter name less than 20 characters";
+				return false;
+			}
+			if(lname.match(correct))
+			{
+				true;
+			}
+			else
+			{
+				document.getElementById("msg1").innerHTML="**Only alphabets are allowed";
+				return false;
+			}
+			
+			//email validation
+			var email=document.getElementById("email").value;
+			if(email=="")
+			{
+				document.getElementById("msg2").innerHTML="**Enter your email id";
+				document.getElementById("msg2").style.color="red";
+				return false;
+			}
+			var email=document.regForm.Email.value;
+			if(email.indexOf('@')<=0)
+			{
+				document.getElementById("msg2").innerHTML="**invalid @ position";
+				document.getElementById("msg2").style.color="red";
+				document.getElementById("msg2").style.fontStyle = "italic";
+				return false;
+			}
+			
+			//password validation
+			var pass1=document.getElementById("pass1").value;
+			var pass2=document.getElementById("pass2").value;
+			if(pass1=="")
+			{
+				document.getElementById("msg3").innerHTML="**Enter password";
+				document.getElementById("msg3").style.color="red";
+				document.getElementById("msg3").style.fontStyle = "italic";
+				return false;
+			}
+			if(pass1.length<8)
+			{
+				document.getElementById("msg3").innerHTML="**Password contain atleat 8 Alphanumeric";
+				document.getElementById("msg3").style.color="red";
+				document.getElementById("msg3").style.fontStyle = "italic";
+				return false;
+			}
+			if(pass1.length>15)
+			{
+				document.getElementById("msg3").innerHTML="**Password contain not more than 12 characters";
+				document.getElementById("msg3").style.color="red";
+				document.getElementById("msg3").style.fontStyle = "italic";
+				return false;
+			}
+			
+			if(pass2=="")
+			{
+				document.getElementById("msg4").innerHTML="**Enter your password";
+				document.getElementById("msg4").style.color="red";
+				document.getElementById("msg4").style.fontStyle = "italic";
+				return false;
+			}
+			if(pass1!=pass2)
+			{
+				document.getElementById("msg4").innerHTML="**Password are not same";
+				document.getElementById("msg4").style.color="red";
+				document.getElementById("msg4").style.fontStyle = "italic";
+				return false;
+			}
+			
+			//mobile number validation
+			var mobile=document.getElementById("mobile").value;
+			if(mobile=="")
+			{
+				document.getElementById("msg5").innerHTML="**Please fill your mobile No.";
+				document.getElementById("msg5").style.color="red";
+				document.getElementById("msg5").style.fontStyle = "italic";
+				return false;
+			}
+			if(isNaN(mobile))
+			{
+				document.getElementById("msg5").innerHTML="**Only enter numeric digit";
+				document.getElementById("msg5").style.color="red";
+				document.getElementById("msg5").style.fontStyle = "italic";
+				return false;
+			}
+			if(mobile.length<10)
+			{
+				document.getElementById("msg5").innerHTML="**Mobile No. must be 10 digit";
+				document.getElementById("msg5").style.color="red";
+				document.getElementById("msg5").style.fontStyle = "italic";
+				return false;
+			}
+			if(mobile.length>10)
+			{
+				document.getElementById("msg5").innerHTML="**Mobile No. must be 10 digit";
+				document.getElementById("msg5").style.color="red";
+				document.getElementById("msg5").style.fontStyle = "italic";
+				return false;
+			}
+			if((mobile.charAt(0)!=9) && (mobile.charAt(0)!=8) && (mobile.charAt(0)!=7))
+			{
+				document.getElementById("msg5").innerHTML="**Mobile Number must be start with 9,8,7";
+				return false;
+			}
+			
+			
+			//CITY VALIDATION
+			if(regForm.city.selectedIndex==0)
+			{
+				document.getElementById("msg6").innerHTML="**Please choose your city";
+				document.getElementById("msg6").style.color="red";
+				document.getElementById("msg6").style.fontStyle = "italic";
+				return false;
+			}
+			
+			//pincode validation
+			var pincode=document.getElementById("pin").value;
+			if(pincode=="")
+			{
+				document.getElementById("msg7").innerHTML="**Please enter your city pincode";
+				document.getElementById("msg7").style.color="red";
+				document.getElementById("msg7").style.fontStyle = "italic";
+				return false;
+			}
+			if(isNaN(pincode)){
+				document.getElementById("msg7").innerHTML="**Only enter numeric value";
+				document.getElementById("msg7").style.color="red";
+				document.getElementById("msg7").style.fontStyle = "italic";
+				return false;
+			}
+			if(pincode.length<6)
+			{
+				document.getElementById("msg7").innerHTML="**Pincode contain only 6 digit";
+				document.getElementById("msg7").style.color="red";
+				document.getElementById("msg7").style.fontStyle = "italic";
+				return false;
+			}
+			if(pincode.length>6)
+			{
+				document.getElementById("msg7").innerHTML="**Pincode contain only 6 digit";
+				document.getElementById("msg7").style.color="red";
+				document.getElementById("msg7").style.fontStyle = "italic";
+				return false;
+			}	
+			
+		}
+		</script>
+	</head>
+	
+	
+<body>
+	<div class="main">
+		<form name="regForm" onsubmit="return formvalidation()" method="POST">
+			<h1>Registration Form</h1>
+			<br>
+			<label>First name:</label>
+			<input type="text" placeholder="Enter your firstname" id="fname" name="fname"></input>
+			<span id="msg"></span>
+			<br></br>
+			<label>Last name:</label>
+			<input type="text" placeholder="Enter your lastname" id="lname" name="lname"></input>
+			<span id="msg1"></span>
+			<br></br>
+			<label>Email Address:</label>
+			<input type="text" placeholder="Enter your email" id="email" name="Email"></input>
+			<span id="msg2"></span>
+			<br></br>
+			<label>Password:</label>
+			<input type="password" placeholder="password" id="pass1" name="password1"></input>
+			<span id="msg3"></span>
+			<br></br>
+			<label>Confirm Password:</label>
+			<input type="password" placeholder="confirm password" id="pass2" name="password2"></input>
+			<span id="msg4"></span>
+			<br></br>
+			<label>Mobile Number:</label>
+			<input type="text" placeholder="mobile number" id="mobile" name="mobile"></input>
+			<span id="msg5"></span>
+			<br></br>
+			<label>City:</label>
+			<select name="city">
+				<option value="--Choose your city--">--Choose your city--</option>
+				<option value="Bangalore">Bangalore</option>
+				<option value="Mysore">Mysore</option>
+				<option value="Mangalore">Mangalore</option>
+				<option value="Indira Nagar">Indira Nagar</option>
+				<option value="Whitefield">Whitefield</option>
+				<option value="Sarjapur">Sarjapur</option>
+			</select>
+			<span id="msg6"></span>
+			<br></br>
+			<label>Pincode:</label>
+			<input type="text" placeholder="enter pincode" id="pin" name="pincode"></input>
+			<span id="msg7"></span>
+			<br></br>
+			<label>Permanent Address:</label>
+			<textarea rows="3" cols="50" type="text" name="address">Write your address here........</textarea>
+			<span id="msg8"></span>
+			<br></br><br>
+			<label>Upload your Resume:</label>
+			<input type="file" name="fileToUpload" id="fileToUpload">
+			<br></br>
+			<input type="submit" value="Submit"></input>
+		</form>
+	</div>
+	<br></br>
+</body>
+</html>
