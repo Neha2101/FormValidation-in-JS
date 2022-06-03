@@ -1,0 +1,45 @@
+﻿.main{
+	background-color:#edeeef;
+	height:750px;
+	width:60%;
+	position:relative;
+	top:20px;
+	left:350px;
+	padding:0px 20px 0px 25px;;
+
+}
+
+h1{
+	color:#000000;
+	padding:10px;
+	text-align:center;
+}
+
+label{
+	font-size:18px;
+}
+
+#fname,#lname,#email,#pass1,#pass2,#mobile,#city,#pin,#address{
+	padding:8px 0px 8px 15px;
+	width:50%;
+}
+
+textarea{
+	resize:none;
+}
+
+input[type="submit"]{
+	padding:5px;
+	font-size:18px;
+	margin:20px 0px 0px 100px;
+	background-color:#6bba05;
+	color:#ffffff;
+	width:20%;
+}
+input[type="submit"]:hover{
+	background-color:#4b8205;
+	color:#ffffff;
+	cursor:pointer;
+}
+
+
